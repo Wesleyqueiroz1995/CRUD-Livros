@@ -1,0 +1,87 @@
+<div class="container">
+  <h1>Cadastrar Livro</h1>
+  <form [formGroup]="livroForm" (ngSubmit)="cadastrarLivro()">
+    <!-- Nome do Livro -->
+    <div class="form-group">
+      <label for="nome">Nome do Livro:</label>
+      <input
+        id="nome"
+        type="text"
+        class="form-control"
+        formControlName="nome"
+        placeholder="Digite o nome do livro"
+      />
+      <div *ngIf="livroForm.get('nome')?.invalid && livroForm.get('nome')?.touched" class="error">
+        O nome do livro é obrigatório.
+      </div>
+    </div>
+
+    <!-- Editora -->
+    <div class="form-group">
+      <label for="editora">Editora:</label>
+      <input
+        id="editora"
+        type="text"
+        class="form-control"
+        formControlName="editora"
+        placeholder="Digite a editora"
+      />
+      <div *ngIf="livroForm.get('editora')?.invalid && livroForm.get('editora')?.touched" class="error">
+        A editora é obrigatória.
+      </div>
+    </div>
+
+    <!-- Ano de Publicação -->
+    <div class="form-group">
+      <label for="anoPublicacao">Ano de Publicação:</label>
+      <input
+        id="anoPublicacao"
+        type="text"
+        class="form-control"
+        formControlName="anoPublicacao"
+        placeholder="Digite o ano de publicação (ex: 2023)"
+      />
+      <div *ngIf="livroForm.get('anoPublicacao')?.invalid && livroForm.get('anoPublicacao')?.touched" class="error">
+        Insira um ano válido (4 dígitos).
+      </div>
+    </div>
+
+    <!-- Autores -->
+    <div class="form-group">
+      <label for="autores">Autores:</label>
+      <input
+        id="autores"
+        type="text"
+        class="form-control"
+        formControlName="autores"
+        placeholder="Digite o(s) autor(es)"
+      />
+      <div *ngIf="livroForm.get('autores')?.invalid && livroForm.get('autores')?.touched" class="error">
+        Os autores são obrigatórios.
+      </div>
+    </div>
+
+    <!-- Formato -->
+    <div class="form-group">
+      <label for="formato">Formato:</label>
+      <select id="formato" class="form-control" formControlName="formato">
+        <option value="">Selecione o formato</option>
+        <option value="fisico">Físico</option>
+        <option value="digital">Digital</option>
+      </select>
+      <div *ngIf="livroForm.get('formato')?.invalid && livroForm.get('formato')?.touched" class="error">
+        O formato é obrigatório.
+      </div>
+    </div>
+
+    <!-- Botão de Cadastro -->
+    <button type="submit" class="btn btn-primary" [disabled]="livroForm.invalid">
+      Cadastrar Livro
+    </button>
+
+    <nav class=" listar-nav" >
+    <a routerLink="/livros/listar" class="nav-link">Visualizar Livros</a>
+    </nav>
+  </form>
+</div>
+

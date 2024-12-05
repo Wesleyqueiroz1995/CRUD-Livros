@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>Lista de Livros</h1>
+
+  <!-- Indicador de carregamento -->
+  <div *ngIf="carregando" class="loading">
+    Carregando livros...
+  </div>
+
+  <!-- Caso não tenha livros -->
+  <div *ngIf="!carregando && livros.length === 0" class="no-data">
+    Nenhum livro cadastrado.
+  </div>
+
+  <!-- Tabela de livros -->
+  <table *ngIf="livros.length > 0" class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Editora</th>
+        <th>Ano</th>
+        <th>Autores</th>
+        <th>Formato</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let livro of livros">
+        <td>{{ livro.id }}</td>
+        <td>{{ livro.nome }}</td>
+        <td>{{ livro.editora }}</td>
+        <td>{{ livro.anoPublicacao }}</td>
+        <td>{{ livro.autores }}</td>
+        <td>{{ livro.formato }}</td>
+        <td>
+          
+          <button class="btn btn-danger" (click)="excluirLivro(livro.id)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

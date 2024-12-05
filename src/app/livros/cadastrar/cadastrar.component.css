@@ -1,0 +1,107 @@
+/* Estilo para o contêiner do formulário */
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Título do formulário */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Estilo para as labels dos campos */
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #555;
+}
+
+/* Estilo para os inputs e selects */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+/* Estilo para a mensagem de erro */
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+
+/* Botão de cadastro */
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.3s;
+}
+
+
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Estilo para o nav de "Visualizar Livros" */
+.listar-nav {
+  text-align: center;
+}
+
+.nav-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-block;
+  padding: 8px 15px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  margin-top: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Estilo para o formulário em tela pequena */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .form-control {
+    font-size: 14px;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+}
